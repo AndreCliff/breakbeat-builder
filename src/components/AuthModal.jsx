@@ -15,7 +15,7 @@ export default function AuthModal({ onClose, onSuccess }) {
     try {
       const { error: err } = await supabase.auth.signInWithOtp({
         email: email.trim(),
-        options: { emailRedirectTo: window.location.href },
+        options: { emailRedirectTo: window.location.origin },
       })
       if (err) throw err
       setStep('sent')
@@ -32,7 +32,7 @@ export default function AuthModal({ onClose, onSuccess }) {
     try {
       const { error: err } = await supabase.auth.signInWithOAuth({
         provider: 'google',
-        options: { redirectTo: window.location.href },
+        options: { redirectTo: window.location.origin },
       })
       if (err) throw err
     } catch (err) {
