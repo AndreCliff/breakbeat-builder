@@ -17,6 +17,7 @@ import ProModal        from './components/ProModal.jsx'
 import PatternLibrary  from './components/PatternLibrary.jsx'
 import Footer          from './components/Footer.jsx'
 import TipsPanel       from './components/TipsPanel.jsx'
+import MobileWarning   from './components/MobileWarning.jsx'
 
 // Steps: number[16][128] — 0 = inactive, 1–127 = velocity
 // Columns 0–31 = 2-bar, 0–63 = 4-bar, 0–95 = 6-bar, 0–127 = 8-bar loop
@@ -1052,6 +1053,7 @@ export default function App() {
 
   return (
     <UserPlanProvider user={user}>
+      <MobileWarning />
       <div className="min-h-screen text-[var(--text)] font-mono flex flex-col" style={{ background: 'var(--bg)' }}>
         <Header
           user={user}
