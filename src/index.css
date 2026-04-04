@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent:       #C46E1F;
+    --accent-hover: #A35618;
+    --bg:           #1a1610;
+    --surface:      #242018;
+    --panel:        #1e1b14;
+    --pad-bg:       #2a2418;
+    --border:       rgba(255, 255, 200, 0.07);
+    --text:         #e8dcc8;
+    --muted:        #7a7060;
+    --disabled:     rgba(255, 240, 200, 0.15);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Mono', 'IBM Plex Mono', ui-monospace, monospace;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+
+  /* Grain texture overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+    background-repeat: repeat;
+  }
+
+  /* Scrollbar — dark warm theme */
+  ::-webkit-scrollbar       { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: #3a3328; border-radius: 2px; }
+}
+
+@layer components {
+  /* ── Buttons ─────────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-accent text-black font-bold uppercase text-xs
+           px-5 py-2.5 rounded-[4px]
+           transition-all duration-100 select-none
+           disabled:opacity-30 disabled:cursor-not-allowed;
+    &:hover:not(:disabled) { background: var(--accent-hover); }
+    &:active:not(:disabled) { filter: brightness(0.9); }
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           border font-bold uppercase text-xs
+           px-4 py-2 rounded-[4px]
+           transition-all duration-100 select-none;
+    border-color: var(--disabled);
+    color: var(--muted);
+    &:hover { border-color: var(--accent); color: var(--text); }
+    &:active { border-color: var(--accent-hover); }
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center
+           font-bold uppercase text-xs
+           px-3 py-1.5 rounded-[4px]
+           transition-all duration-100 select-none;
+    color: var(--muted);
+    &:hover { color: var(--text); background: rgba(255,240,200,0.05); }
+  }
+
+  /* ── Transport toggle pair ───────────────────────────────── */
+  .toggle-btn {
+    @apply px-3 py-1.5 text-[10px] font-bold uppercase rounded-[3px]
+           border transition-all duration-100 select-none;
+    border-color: var(--border);
+    color: var(--muted);
+    &:hover { border-color: rgba(196,110,31,0.5); color: var(--text); }
+  }
+  .toggle-btn.active {
+    @apply bg-accent text-black;
+    border-color: var(--accent);
+  }
+
+  /* ── Slider ──────────────────────────────────────────────── */
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    background: var(--accent);
+    cursor: pointer;
+  }
+  input[type='range']::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-radius: 2px;
+    background: var(--accent);
+    cursor: pointer;
+  }
+
+  /* ── Number input ────────────────────────────────────────── */
+  input[type='number'] {
+    -moz-appearance: textfield;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: inherit;
+    text-align: center;
+    border-radius: 3px;
+    outline: none;
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type='number']:focus {
+    border-color: var(--accent);
+  }
+}

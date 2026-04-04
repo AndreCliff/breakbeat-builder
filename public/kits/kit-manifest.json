@@ -1,0 +1,78 @@
+{
+  "kits": [
+    {
+      "id": "andre-ramone-starter-kit",
+      "name": "Andre Ramone Starter Kit",
+      "description": "Hip-hop & beatbox essentials — kicks, snares, hats, bass notes, and vocal chops.",
+      "path": "/kits/andre-ramone-starter-kit",
+      "namePrefix": "Andre Ramone SK - ",
+      "sounds": [
+        "Andre Ramone SK - Bass Note 1.WAV.wav",
+        "Andre Ramone SK - Bass Note 2.WAV.wav",
+        "Andre Ramone SK - Beatbox Kick.WAV.wav",
+        "Andre Ramone SK - Beatbox Snare.WAV.wav",
+        "Andre Ramone SK - Digi Clap.WAV.wav",
+        "Andre Ramone SK - Hat 1.WAV.wav",
+        "Andre Ramone SK - Hat 2.WAV.wav",
+        "Andre Ramone SK - Kick 1.WAV.wav",
+        "Andre Ramone SK - Snare 1.WAV.wav",
+        "Andre Ramone SK - Vox - Hey.WAV.wav",
+        "Andre Ramone SK - Vox - Ho.WAV.wav"
+      ]
+    },
+    {
+      "id": "brizake-kit",
+      "name": "Brizake Kit",
+      "description": "Punchy drums with attitude — kicks, snares, hats, and a heavy thump kick.",
+      "path": "/kits/brizake-kit",
+      "namePrefix": "Brizake Kit - ",
+      "sounds": [
+        "Brizake Kit - Hat 2.wav",
+        "Brizake Kit - Hat.wav",
+        "Brizake Kit - Hit.wav",
+        "Brizake Kit - Kick.wav",
+        "Brizake Kit - Snare 2.wav",
+        "Brizake Kit - Snare.wav",
+        "Brizake Kit - Thump Kick.wav"
+      ]
+    },
+    {
+      "id": "8-0-ez",
+      "name": "8-0-EZ",
+      "description": "Clean and punchy — kicks, snares, claps, hats, subs, and a synth tom.",
+      "path": "/kits/8-0-EZ",
+      "namePrefix": "8-0-EZ - ",
+      "sounds": [
+        "8-0-EZ - Clap 2.wav",
+        "8-0-EZ - Clap.wav",
+        "8-0-EZ - Hat 1.wav",
+        "8-0-EZ - Kick 2.wav",
+        "8-0-EZ - Kick.wav",
+        "8-0-EZ - Snare 2.wav",
+        "8-0-EZ - Snare.wav",
+        "8-0-EZ - Sub 2.wav",
+        "8-0-EZ - Sub.wav",
+        "8-0-EZ - Synth Tom.wav"
+      ]
+    },
+    {
+      "id": "wowzers-kit",
+      "name": "Wowzers Kit",
+      "description": "Melodic & percussive — basses, bells, hats, ride, kick, and snare.",
+      "path": "/kits/wowzers-kit",
+      "namePrefix": "Wowzers Kit - ",
+      "sounds": [
+        "Wowzers Kit - Bass 1.wav",
+        "Wowzers Kit - Bass 2.wav",
+        "Wowzers Kit - Bell.wav",
+        "Wowzers Kit - Hi Hat 2.wav",
+        "Wowzers Kit - Hi Hat 3.wav",
+        "Wowzers Kit - Hi Hat.wav",
+        "Wowzers Kit - Hit.wav",
+        "Wowzers Kit - Kick.wav",
+        "Wowzers Kit - Ride.wav",
+        "Wowzers Kit - Snare.wav"
+      ]
+    }
+  ]
+}
