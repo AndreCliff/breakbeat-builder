@@ -18,6 +18,7 @@ import PatternLibrary  from './components/PatternLibrary.jsx'
 import Footer          from './components/Footer.jsx'
 import TipsPanel       from './components/TipsPanel.jsx'
 import MobileWarning   from './components/MobileWarning.jsx'
+import ShareNudge      from './components/ShareNudge.jsx'
 
 // Steps: number[16][128] — 0 = inactive, 1–127 = velocity
 // Columns 0–31 = 2-bar, 0–63 = 4-bar, 0–95 = 6-bar, 0–127 = 8-bar loop
@@ -168,6 +169,7 @@ export default function App() {
   const [isMidiExporting,   setIsMidiExporting]   = useState(false)
   const [isStemsExporting,  setIsStemsExporting]  = useState(false)
   const [flashingPads,      setFlashingPads]      = useState(() => new Set())
+  const [showShareNudge,    setShowShareNudge]    = useState(false)
   const [metronomeEnabled,  setMetronomeEnabled]  = useState(false)
   // null = MIDI not supported/denied (show nothing), false = supported but no device, true = connected
   const [midiConnected,     setMidiConnected]     = useState(null)
@@ -915,6 +917,7 @@ export default function App() {
       URL.revokeObjectURL(url)
 
       trackEvent('export_completed', { filename, bpm, swing, loopLength })
+      setShowShareNudge(true)
     } catch (err) {
       console.error('Export failed:', err)
     } finally {
@@ -1228,6 +1231,7 @@ export default function App() {
 
         <Footer />
       </div>
+      <ShareNudge visible={showShareNudge} onDismiss={() => setShowShareNudge(false)} />
     </UserPlanProvider>
   )
 }
